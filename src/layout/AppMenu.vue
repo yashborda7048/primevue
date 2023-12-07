@@ -66,7 +66,7 @@ const model = ref([
         items: [
             {
                 label: 'Stakeholders',
-                icon: 'pi pi-uesrs',
+                icon: 'pi pi-users',
                 items: [
                     { label: 'Submenu 1.1.1', to: '/' },
                     { label: 'Submenu 1.1.2', to: '/' },
