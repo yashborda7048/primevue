@@ -93,7 +93,7 @@ const toggle = (event) => {
         </span>
 
         <div class="lg:ml-auto flex-order-3">
-            <Button class="p-0 bg-white border-none" type="button" @click="toggle" aria-haspopup="true"
+            <Button class="p-0 bg-white border-none border-circle" type="button" @click="toggle" aria-haspopup="true"
                 aria-controls="overlay_menu">
                 <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" class="" size="large"
                     shape="circle" />

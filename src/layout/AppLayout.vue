@@ -57,7 +57,7 @@ const isOutsideClicked = (event) => {
 </script>
 
 <template>
-    <div class="layout-wrapper" :class="containerClass">
+    <div class="layout-wrapper customize" :class="containerClass">
         <app-topbar></app-topbar>
         <div class="layout-sidebar">
             <app-sidebar></app-sidebar>
@@ -77,11 +77,59 @@ const isOutsideClicked = (event) => {
     left: 0;
     height: calc(100vh - 5rem);
     border-radius: 0%;
-    top: 5rem;  
+    top: 5rem;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
+.layout-wrapper .layout-sidebar .layout-menu ul a {
+    border: 1px solid transparent;
+}
+.layout-wrapper .layout-sidebar .layout-menu ul a:focus {
+    box-shadow: none;
+    border: 1px solid var(--primary-color);
+}
+
 .layout-wrapper .layout-main-container {
-    padding-left: 3rem;;
+    padding-left: 3rem;
+}
+
+@media screen and (min-width: 992px) {
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-main-container {
+        margin-left: 130px;
+    }
+
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar {
+        left: 130px;
+        width: 130px;
+        padding: 0.5rem 0.5rem;
+        overflow: visible;
+    }
+
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar .layout-menu ul a {
+        flex-direction: column;
+        gap: 4px;
+    }
+    /* .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar .active-menuitem {
+        position: relative;
+    } */
+
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
+        margin: auto;
+    }
+
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar .layout-menu ul ul {
+        position: absolute;
+        background-color: #cfd5ff;
+        width: 300px;
+        z-index: 1000;
+        /* border: 1px solid var(--primary-color);   */
+        left: 100px;
+        margin-top: 15px;
+    }
+
+    .customize.layout-wrapper.layout-static.layout-static-inactive .layout-sidebar .layout-menu ul ul li a {
+        flex-direction: row;
+        margin-left: 0px;
+    }
 }
 </style>
