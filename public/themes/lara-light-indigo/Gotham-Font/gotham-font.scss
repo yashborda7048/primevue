@@ -1,0 +1,24 @@
+@mixin fontGotham($name, $weight, $style) {
+  @font-face {
+    font-family: "Gotham";
+    src: url("./Gotham-Font/#{$name}") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include fontGotham("Gotham-Thin.otf", 100, normal);
+@include fontGotham("Gotham-ThinItalic.otf", 100, italic);
+@include fontGotham("Gotham-XLight.otf", 200, normal);
+@include fontGotham("Gotham-XLightItalic.otf", 200, italic);
+@include fontGotham("GothamLight.ttf", 300, normal);
+@include fontGotham("GothamLightItalic.ttf", 300, italic);
+@include fontGotham("GothamBook.ttf", normal, normal);
+@include fontGotham("GothamBookItalic.ttf", normal, italic);
+@include fontGotham("GothamMedium.ttf", 500, normal);
+@include fontGotham("GothamMediumItalic.ttf", 500, italic);
+@include fontGotham("Gotham-Bold.otf", 600, normal);
+@include fontGotham("GothamBold.ttf", bold, normal);
+@include fontGotham("GothamBoldItalic.ttf", bold, italic);
+@include fontGotham("Gotham-Black.otf", 800, normal);
+@include fontGotham("Gotham-Black.otf", 900, normal);
