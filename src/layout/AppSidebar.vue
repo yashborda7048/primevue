@@ -107,7 +107,7 @@ const model = ref([
 
 <template>
     <router-link to="/" class="sidebar-logo">
-        <img src="layout/images/logo-white.svg" alt="logo" />
+        <img src="@/assets/image/logo.svg" alt="logo" />
         <h6>Project <br> <b>Communicatie</b></h6>
     </router-link>
 
