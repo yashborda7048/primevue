@@ -1,7 +1,7 @@
 @mixin fontGotham($name, $weight, $style) {
   @font-face {
     font-family: "Gotham";
-    src: url("./Gotham-Font/#{$name}") format("truetype");
+    src: url("./#{$name}") format("truetype");
     font-weight: $weight;
     font-style: $style;
   }
