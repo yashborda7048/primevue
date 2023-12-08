@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useLayout } from '@/layout/composables/layout';
 import { useRouter } from 'vue-router';
 
@@ -15,19 +15,6 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     unbindOutsideClickListener();
-});
-
-const logoUrl = computed(() => {
-    return `layout/images/${layoutConfig.darkTheme.value ? 'logo-white' : 'logo-dark'}.svg`;
-});
-
-const onTopBarMenuButton = () => {
-    topbarMenuActive.value = !topbarMenuActive.value;
-};
-const topbarMenuClasses = computed(() => {
-    return {
-        'layout-topbar-menu-mobile-active': topbarMenuActive.value
-    };
 });
 
 const bindOutsideClickListener = () => {
@@ -79,11 +66,7 @@ const toggle = (event) => {
 
 <template>
     <div class="layout-topbar">
-        <router-link to="/" class="layout-topbar-logo">
-            <img :src="logoUrl" alt="logo" />
-            <h6>Project <br> <b>Communicatie</b></h6>
-        </router-link>
-        <button class="p-link layout-menu-button layout-topbar-button ml-0" @click="onMenuToggle()">
+        <button class="p-link layout-menu-button layout-topbar-button ml-0 lg:hidden" @click="onMenuToggle()">
             <i class="pi pi-bars"></i>
         </button>
 

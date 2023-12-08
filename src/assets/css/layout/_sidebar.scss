@@ -1,0 +1,94 @@
+.customize {
+    .layout-sidebar {
+        left: 0;
+        width: 240px;
+        height: 100vh;
+        border-radius: 0%;
+        top: 0rem;
+        display: flex;
+        flex-direction: column;
+        background: #f8f9fa;
+        box-shadow: -1px 0px 0px 0px #dee2e6 inset;
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            h6 {
+                color: #545eb2;
+                font-size: 15px;
+                font-weight: 400; 
+                b {
+                  color: #36418B;
+                  font-weight: 500;
+                }
+            }
+        }
+
+        .layout-menu {
+            ul {
+                a {
+                    border: 1px solid transparent;
+
+                    &:focus {
+                        box-shadow: none;
+                        border: 1px solid var(--primary-color);
+                    }
+                    .layout-menuitem-icon {
+                        margin-right: 16px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        &.layout-static.layout-static-inactive {
+            .layout-sidebar {
+                left: 130px;
+                width: 130px;
+                padding: 0.5rem 0.5rem;
+                overflow: visible;
+
+                .layout-menu {
+                    ul {
+                        a {
+                            flex-direction: column;
+                            gap: 4px;
+
+                            .layout-submenu-toggler {
+                                margin: auto;
+                            }
+                        }
+
+                        ul {
+                            position: absolute;
+                            background-color: #cfd5ff;
+                            width: 240px;
+                            z-index: 1000;
+                            left: 100px;
+                            margin-top: 15px;
+
+                            li {
+                                a {
+                                    flex-direction: row;
+                                    margin-left: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .sidebar-logo {
+                    justify-content: center;
+
+                    h6 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
