@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 import AppMenuItem from './AppMenuItem.vue';
 import { useLayout } from '@/layout/composables/layout';
-const { onMenuToggle } = useLayout();
+const { onMenuToggle, layoutState } = useLayout();
 
 const model = ref([
     {
@@ -15,11 +15,11 @@ const model = ref([
                 label: 'Inbox',
                 icon: 'pi pi-comments',
                 items: [
-                    { label: 'Nieuw bericht', to: '/Nieuw' },
-                    { label: 'Opgepakt', to: '/Opgepakt' },
-                    { label: 'Nieuwe reactie', to: '/Nieuwe' },
-                    { label: 'Wacht op reactie', to: '/Wacht' },
-                    { label: 'Ticket gesloten', to: '/Ticket' },
+                    { label: 'Nieuw bericht', to: '/test' },
+                    { label: 'Opgepakt', to: '/test-2' },
+                    { label: 'Nieuwe reactie', to: '/test-3' },
+                    { label: 'Wacht op reactie', to: '/test-4' },
+                    { label: 'Ticket gesloten', to: '/test-5' },
                 ]
             },
         ]
@@ -30,9 +30,9 @@ const model = ref([
                 label: 'Projecten',
                 icon: 'pi pi-book',
                 items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
+                    { label: 'Submenu 1.1.1', to: '/df-1' },
+                    { label: 'Submenu 1.1.2', to: '/df-2' },
+                    { label: 'Submenu 1.1.3', to: '/df-3' }
                 ]
             },
         ]
@@ -118,7 +118,11 @@ const model = ref([
         </template>
     </ul>
     <div class="mt-auto text-right">
-        <Button icon="pi pi-bars" aria-label="button" @click="onMenuToggle()" class="w-full" outlined />
+        <Button @click="onMenuToggle()" class="w-full flex align-items-center" text
+            :class="layoutState.staticMenuDesktopInactive.value ? 'justify-content-center' : 'justify-content-between'">
+            <span v-show="!layoutState.staticMenuDesktopInactive.value">Menu inklappen</span>
+            <i :class="layoutState.staticMenuDesktopInactive.value ? 'pi pi-angle-right' : 'pi pi-angle-left'"></i>
+        </Button>
     </div>
 </template>
 

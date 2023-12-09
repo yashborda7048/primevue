@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onBeforeMount, watch } from 'vue';
+import { ref, computed, onBeforeMount, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useLayout } from '@/layout/composables/layout';
 
@@ -67,22 +67,27 @@ const itemClick = (event, item) => {
 const checkActiveRoute = (item) => {
     return route.path === item.to;
 };
+
+const isChildActive = computed(() => {
+    if (props.item.items) {
+        return props.item.items.some(child => route.path === child.to);
+    }
+    return false;
+});
 </script>
 
 <template>
     <li :class="{ 'layout-root-menuitem': root, 'active-menuitem': isActiveMenu }">
-        <div v-if="root && item.visible !== false" class="layout-menuitem-root-text">{{ item.label }}</div>
         <a v-if="(!item.to || item.items) && item.visible !== false" :href="item.url"
-            @click="itemClick($event, item, index)" :class="item.class" :target="item.target" tabindex="0">
+            @click="itemClick($event, item, index)" :class="[item.class, { 'active-route': isChildActive }]"
+            :target="item.target" tabindex="0">
             <i :class="item.icon" class="layout-menuitem-icon"></i>
             <span class="layout-menuitem-text">{{ item.label }}</span>
-            <!-- <i class="pi pi-fw pi-angle-down layout-submenu-toggler" v-if="item.items"></i> -->
         </a>
         <router-link v-if="item.to && !item.items && item.visible !== false" @click="itemClick($event, item, index)"
             :class="[item.class, { 'active-route': checkActiveRoute(item) }]" tabindex="0" :to="item.to">
             <i :class="item.icon" class="layout-menuitem-icon"></i>
             <span class="layout-menuitem-text">{{ item.label }}</span>
-            <!-- <i class="pi pi-fw pi-angle-down layout-submenu-toggler" v-if="item.items"></i> -->
         </router-link>
         <Transition v-if="item.items && item.visible !== false" name="layout-submenu">
             <ul v-show="root ? true : isActiveMenu" class="layout-submenu ">
