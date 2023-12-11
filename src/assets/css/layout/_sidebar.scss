@@ -38,8 +38,9 @@
                 li {
                     a {
                         border: none;
-                        padding: 17.5px 15px;
+                        padding: 15.5px 15px;
                         gap: 16px;
+                        margin: 2px 0px;
 
                         span {
                             font-size: 15px;
@@ -48,7 +49,7 @@
                         }
 
                         &:hover {
-                            color: #277b88;
+                            background-color: #dcf1ec;
                         }
                         &:focus {
                             box-shadow: none;
@@ -95,8 +96,9 @@
                             background-color: #c0ebef;
                             width: 240px;
                             z-index: 1000;
-                            left: 100px;
-                            margin-top: 15px;
+                            left: 129px;
+                            margin-top: -60px;
+                            border-radius: 0%;
 
                             li {
                                 a {

@@ -15,11 +15,11 @@ const model = ref([
                 label: 'Inbox',
                 icon: 'pi pi-comments',
                 items: [
-                    { label: 'Nieuw bericht', to: '/test' },
-                    { label: 'Opgepakt', to: '/test-2' },
-                    { label: 'Nieuwe reactie', to: '/test-3' },
-                    { label: 'Wacht op reactie', to: '/test-4' },
-                    { label: 'Ticket gesloten', to: '/test-5' },
+                    { label: 'Nieuw bericht', to: '/inbox' }, // New message
+                    { label: 'Opgepakt', to: '/inbox/opgepakt' }, // Arrested   
+                    { label: 'Nieuwe reactie', to: '/inbox/nieuwe-reactie' }, // New response
+                    { label: 'Wacht op reactie', to: '/inbox/wacht-op-reactie' }, // Wait for response
+                    { label: 'Ticket gesloten', to: '/inbox/ticket-gesloten' },  // Ticket closed
                 ]
             },
         ]
