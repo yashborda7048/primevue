@@ -1,41 +1,15 @@
 @import '@/assets/css/layout/sidebar.scss';
+@import '@/assets/css/layout/topbar.scss';
 
-.p-button:focus {
-    box-shadow: none;
-}
-.layout-topbar {
-    .p-inputtext {
-        color: #212529;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 23px;
-        padding-left: 40px;
-        &:focus {
-            box-shadow: none;
-        }
-        &::placeholder {
-            color: #adb5bd;
-        }
-    }
-    .profile-btn {
-        display: flex;
-        align-items: center;
-        .name {
-            text-align: end;
-            margin-right: 16px;
-            color: #212529;
-            h6 {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 24px;
-            }
-            p {
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 16px;
-            }
-        }
-    }
+@import '@/assets/css/inbox/main.scss';
+
+// .p-button:focus {
+//     box-shadow: none;
+// }
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 @media screen and (min-width: 992px) {
@@ -51,15 +25,8 @@
         }
 
         .layout-main-container {
-            padding: 9rem 2rem 2rem 3rem;
+            padding: 118px 24px 24px 24px;
             margin-left: 240px;
-        }
-
-        .layout-topbar {
-            left: 240px;
-            width: calc(100% - 240px);
-            padding: 23px 43px;
-            height: 94px;
         }
     }
 }

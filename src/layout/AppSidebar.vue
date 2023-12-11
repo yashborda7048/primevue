@@ -29,11 +29,7 @@ const model = ref([
             {
                 label: 'Projecten',
                 icon: 'pi pi-book',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df-1' },
-                    { label: 'Submenu 1.1.2', to: '/df-2' },
-                    { label: 'Submenu 1.1.3', to: '/df-3' }
-                ]
+                to: '/projecten' 
             },
         ]
     },
@@ -42,11 +38,7 @@ const model = ref([
             {
                 label: 'Communicatie',
                 icon: 'pi pi-inbox',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
-                ]
+                to: '/communicatie'   
             },
         ]
     },
@@ -55,11 +47,7 @@ const model = ref([
             {
                 label: 'Taken',
                 icon: 'pi pi-file-edit',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
-                ]
+                to: '/taken'   
             },
         ]
     },
@@ -68,11 +56,7 @@ const model = ref([
             {
                 label: 'Stakeholders',
                 icon: 'pi pi-users',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
-                ]
+                to: '/stakeholders'   
             },
         ]
     },
@@ -81,11 +65,7 @@ const model = ref([
             {
                 label: 'Analyse',
                 icon: 'pi pi-search',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
-                ]
+                to: '/analyse'   
             },
         ]
     },
@@ -94,11 +74,7 @@ const model = ref([
             {
                 label: 'Instellingen',
                 icon: 'pi pi-cog',
-                items: [
-                    { label: 'Submenu 1.1.1', to: '/df' },
-                    { label: 'Submenu 1.1.2', to: '/df' },
-                    { label: 'Submenu 1.1.3', to: '/df' }
-                ]
+                to: '/instellingen'               
             },
         ]
     },
